@@ -55,6 +55,7 @@ const createComputer = async (req, res) => {
         console.log("imgUrl:", imgUrl);
         console.log("price:", price);
         console.log("processor:", processor);
+        console.log(req.body);
 
         const computer = await Computer.create({
             imgUrl,
@@ -141,6 +142,7 @@ const deleteComputer = async (req, res) => {
 
 const editComputer = async (req, res) => {
     try {
+        console.log(req.body)
         const computerId = req.params.id;
         const computer = await Computer.findById(computerId);
         if (!computer) {
