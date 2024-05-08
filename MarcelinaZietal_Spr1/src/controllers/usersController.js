@@ -123,7 +123,7 @@ const activateUser = async (req, res) => {
       // TODO res.status napisać front
       req.session.isLoggedIn = await middleware.isLoggedIn(req);
       req.session.isAdmin = await middleware.isAdmin(req);
-      res.redirect('/home');
+      res.redirect('/');
   } catch (err) {
       res.status(500).json({ message: err.message });
   }
